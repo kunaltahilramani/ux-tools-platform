@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Copy Generator</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script defer src="../scripts/ux-copy-generator.js"></script>
+</head>
+<body>
+  <header>
+    <h1><a href="../index.html">UX Tools Platform</a></h1>
+    <nav>
+      <ul>
+        <li><a href="color-palette.html">🎨 Color Palette</a></li>
+        <li><a href="persona-builder.html">👤 Persona Builder</a></li>
+        <li><a href="ux-copy-generator.html" class="active">✍️ UX Copy Generator</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>✍️ UX Copy Generator</h2>
+    <div class="form-field">
+      <label for="elementType">UI Element:</label>
+      <select id="elementType">
+        <option value="button">Button</option>
+        <option value="formLabel">Form Label</option>
+        <option value="tooltip">Tooltip</option>
+      </select>
+    </div>
+    <button onclick="generateCopy()">Generate Copy</button>
+    <div id="copyOutput" class="output"></div>
+  </main>
+</body>
+</html>
