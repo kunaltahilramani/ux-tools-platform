@@ -1,24 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UX Tools Platform</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>UX Tools Platform</h1>
-    <nav>
-      <ul>
-        <li><a href="tools/color-palette.html">🎨 Color Palette</a></li>
-        <li><a href="tools/persona-builder.html">👤 Persona Builder</a></li>
-        <li><a href="tools/ux-copy-generator.html">✍️ UX Copy Generator</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <p>Welcome! Select a tool from the navigation above.</p>
-  </main>
-</body>
-</html>
+export default function ScatteredUtilities() {
+  const tools = [
+    { name: "Brand Heist", desc: "Instant official SVG logos." },
+    { name: "Vibe-to-Hex", desc: "Type a mood, get a 5-color palette." },
+    { name: "Context Data", desc: "Industry-specific dummy text." },
+    { name: "Avatar Pile", desc: "Playful vectors or corporate humans." },
+    { name: "Perfect Grain", desc: "Base64 CSS noise generator." },
+    { name: "Snappy Motion", desc: "Premium cubic-bezier curves." },
+    { name: "Type Tinder", desc: "Font pairing & contrast tester." },
+    { name: "Design Excuse", desc: "Jargon generator for angry clients." },
+    { name: "Make it Pop", desc: "Terrible feedback to CSS translator." },
+  ];
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-mono p-8 md:p-16">
+      
+      {/* Header */}
+      <header className="mb-16 border-b-2 border-zinc-800 pb-8">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-4">
+          The Flow-State Suite.
+        </h1>
+        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl">
+          A scattered utility belt for builders who hate leaving their editor. Fast, dumb, and highly effective.
+        </p>
+      </header>
+
+      {/* The Grid */}
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool, index) => (
+          <div 
+            key={index} 
+            className="group border-2 border-zinc-800 bg-zinc-900/50 p-6 rounded-none hover:border-zinc-300 hover:bg-zinc-900 transition-all cursor-pointer flex flex-col justify-between min-h-[160px]"
+          >
+            <div>
+              <h2 className="text-xl font-bold mb-2 uppercase tracking-wide group-hover:text-white text-zinc-300">
+                {tool.name}
+              </h2>
+              <p className="text-zinc-500 text-sm">
+                {tool.desc}
+              </p>
+            </div>
+            <div className="mt-4 text-xs font-bold text-zinc-600 group-hover:text-zinc-300 uppercase flex items-center gap-2">
+              <span className="w-2 h-2 bg-zinc-700 rounded-full group-hover:bg-green-500 animate-pulse transition-colors"></span>
+              Initialize
+            </div>
+          </div>
+        ))}
+      </main>
+
+    </div>
+  );
+}
